@@ -1,8 +1,8 @@
-import React, { use } from 'react'
+import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-
+import {toast} from 'react-toastify'
 
 const Login = () => {
     const [data,setData] = useState([])
@@ -22,11 +22,13 @@ const Login = () => {
        const user = data.find(user => user.username === userName && user.password === password)
        if(user){
         localStorage.setItem("isthenticate", "true")
+        toast.success({userName},'Login Successfully')
         navigate('/destination')
+        
 
        }
        else{
-        setError('User Not Found')
+        toast.error('User Not Found')
        }
 
     }
