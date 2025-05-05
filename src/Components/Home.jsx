@@ -25,7 +25,7 @@ export default function LandingPage() {
         <section className="flex flex-col md:flex-row items-center justify-between px-30 py-10">
           {/* Left Side Text */}
           <div className="max-w-md">
-            <h1 className="text-7xl font-bold text-gray-800 leading-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-800 leading-tight mb-4">
               Web <br />
               <span className="text-blue-900">Design</span> <br />
               <span className="text-teal-500">LANDING PAGE</span>
@@ -47,7 +47,7 @@ export default function LandingPage() {
           </div>
   
           {/* Right Side Image */}
-          <div className="mt-20 md:mt-0 w-full md:w-1/2 flex justify-center">
+          <div className="mt-20 md:mt-0 w-full hidden  lg:block md:w-1/2 ms:flex justify-center">
             <img
               src={image}
               

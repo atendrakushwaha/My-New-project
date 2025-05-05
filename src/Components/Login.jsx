@@ -22,7 +22,7 @@ const Login = () => {
        const user = data.find(user => user.username === userName && user.password === password)
        if(user){
         localStorage.setItem("isthenticate", "true")
-        toast.success({userName},'Login Successfully')
+        // toast.success({userName},'Login Successfully')
         navigate('/destination')
         
 

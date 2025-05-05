@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function LandingPage() {
+export default function Service() {
   return (
     <div className="bg-white text-black font-sans">
       {/* Header
@@ -16,7 +16,7 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="px-6 py-10 max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">Landing page title</h1>
+        <h1 className="text-4xl font-bold mb-4">WelCome Services</h1>
         <p className="mb-6 text-gray-700">Brief description for your product or service. Provide an overview of what it does.</p>
         <button className="bg-black text-white px-6 py-3 rounded mb-6">Primary action</button>
         <img src="https://picsum.photos/400/200?random=1" width={1100} alt="Hero" className="rounded" />

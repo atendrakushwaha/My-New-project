@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate,  NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   const navigate = useNavigate()
@@ -16,6 +16,7 @@ const Navbar = () => {
 
   // ✅ Check authentication directly
   const isAuthenticated = localStorage.getItem("isthenticate") === "true"
+ 
 
   return (
     <>
@@ -30,16 +31,16 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className='menu text-white hidden md:block'>
           <ul className='flex gap-4 text-lg'>
-          <li className='cursor-pointer hover:underline'><Link to="/">Home</Link></li>
-            <li className='cursor-pointer hover:underline'><Link to="/destination">Destination</Link></li>
-            <li className='cursor-pointer hover:underline'><Link to="/service">Service</Link></li>
-            <li className='cursor-pointer hover:underline'><Link to="/community">Community</Link></li>
-            <li className='cursor-pointer hover:underline'><Link to="/about">About</Link></li>
+          <li className='cursor-pointer hover:underline'><NavLink to="/" className={({isActive}) => isActive ? `text-orange-500` : "text-white"}>Home</NavLink></li>
+            <li className='cursor-pointer hover:underline'><NavLink to="/destination"className={({isActive}) => isActive ?  "text-orange-500" : "text-white"}>Destination</NavLink></li>
+            <li className='cursor-pointer hover:underline'><NavLink to="/service" className={({isActive}) => isActive ? "text-orange-500" : "text-white"}>Service</NavLink></li>
+            <li className='cursor-pointer hover:underline'><NavLink to="/community" className={({isActive}) => isActive ?  "text-orange-500" : "text-white"}>Community</NavLink></li>
+            <li className='cursor-pointer hover:underline'><NavLink to="/about" className={({isActive}) => isActive ?  "text-orange-500" : "text-white"}>About</NavLink></li>
           </ul>
         </div>
 
         {/* Desktop Buttons */}
-        <div className='button hidden md:flex-row  md:gap-4 md:block '>
+        <div className='button hidden   md:flex-row  md:gap-4 md:block '>
           {isAuthenticated ? (
             <button
               className='text-white border border-white mr-4 px-4 py-1 rounded hover:bg-white hover:text-orange-500 transition'
@@ -86,6 +87,7 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="absolute top-20 right-0 w-40 bg-blue-500 flex flex-col items-center gap-4 py-4 md:hidden z-50 rounded-lg">
             <ul className='flex flex-col gap-4 text-lg text-white'>
+            <li className='cursor-pointer px-3 py-1 w-full hover:bg-gray-500' onClick={() => {navigate('/'); setIsMenuOpen(false)}}>Home</li>
               <li className='cursor-pointer px-3 py-1 w-full hover:bg-gray-500' onClick={() => {navigate('/destination'); setIsMenuOpen(false)}}>Destination</li>
               <li className='cursor-pointer px-3 py-1 w-full hover:bg-gray-500' onClick={() => {navigate('/service'); setIsMenuOpen(false)}}>Service</li>
               <li className='cursor-pointer px-3 py-1 w-full hover:bg-gray-500' onClick={() => {navigate('/community'); setIsMenuOpen(false)}}>Community</li>
